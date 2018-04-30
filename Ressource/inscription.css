@@ -1,0 +1,19 @@
+body{
+  width: 70%;
+  margin: auto;
+}
+
+fieldset{
+  display: flex;
+  flex-direction: column;
+}
+
+div{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+#valider{
+  width: 150px;
+}
