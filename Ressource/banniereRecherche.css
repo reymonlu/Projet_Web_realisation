@@ -1,0 +1,35 @@
+body{
+  width: 90%;
+  margin: auto;
+
+}
+
+
+.recherche{
+  background-color:  #d2b4de ;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+div{
+  margin: 10px;
+}
+
+h2{
+  font-size: 15px;
+}
+
+.recherche select{
+  height: 30px;
+}
+
+.recherche input{
+  height: 30px;
+}
+
+div:last-child{
+  margin-left: 50px;
+}
