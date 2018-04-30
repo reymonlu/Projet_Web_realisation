@@ -1,0 +1,22 @@
+body{
+  font-family:Geneva,sans-serif;
+  width:90%;
+  margin:auto;
+}
+
+h1 {
+  text-align: center;
+  margin-top: auto;
+}
+
+p {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+input#champ_nom, #champ_prenom, #admail {
+  margin-bottom: 5px;
+  width: 60%;
+}
