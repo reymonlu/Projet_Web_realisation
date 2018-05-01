@@ -7,26 +7,28 @@ body{
 {
   display: flex;
   list-style-type: none;
-  background-color: orange;
+  margin: auto;
+
 }
 #ulMenuNav li{
   border: 1px solid #626262;
   border-radius: 5px;
-  padding: 10px;
+
   color:#626262
 }
-#ulMenuNav li:hover
+#ulMenuNav a
 {
-  border: 1px solid #626262;
   padding: 10px;
+  display: block;
+  background-color: orange;
+ text-decoration: none;
+}
+
+#ulMenuNav a:hover{
   color: white;
   background: #626262;
 }
 
-#ulMenuNav a
-{
- text-decoration: none;
-}
 
 .recherche{
   background-color:  #d2b4de ;
@@ -36,7 +38,9 @@ body{
   align-items: center;
   height: 200px;
 }
-
+body form{
+  margin :auto;
+}
 form div{
   margin: 10px;
 }

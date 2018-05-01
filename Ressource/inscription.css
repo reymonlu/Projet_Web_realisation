@@ -1,5 +1,5 @@
 body{
-  width: 70%;
+  width: 90%;
   margin: auto;
 }
 
@@ -16,4 +16,14 @@ div{
 
 #valider{
   width: 150px;
+}
+
+input[type="date"]{
+  width: 160px;
+}
+
+
+#imageAvatar{
+  display: flex;
+  flex-wrap: wrap;
 }

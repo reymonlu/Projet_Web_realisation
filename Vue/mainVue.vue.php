@@ -17,11 +17,15 @@
     //On inclue notre banniere avec la zone de recherche
     include '../Vue/banniereRecherche.vue.php';
     //et on affiche le menue naviguant s'il l'uilisateur est connecté
-    if($this->sessionEncours != true){
+    if($this->sessionEncours == true){
       include '../Vue/menuNav.vue.php';
     }
+    //Si j'ai des trajets à afficher, je lance la vue des trajets
+
+    //Si mon premier tableau est vide, c'est qu'il n'y a pas de recherche
+    if(!(empty($this->mesTrajetsVue[0]))){
+      include '../Vue/zoneAffichageTrajet.vue.php';
+    }
      ?>
-
-
   </body>
 </html>
