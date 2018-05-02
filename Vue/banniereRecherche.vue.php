@@ -29,8 +29,7 @@
       </div>
 
       <div>
-        <br><br>
-        <input type="submit" value="Envoyer">
+        <input type="submit" value="Rechercher">
         <p><?= (isset($this->errorRecherche)) ? $this->errorRecherche : "" ?> </p>
       </div>
 

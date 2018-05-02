@@ -79,10 +79,14 @@
       </div>
 
       <input type="submit" value="Valider" id="valider">
-      <p><?= (isset($this->error) ? $this->error : "") ?> </p>
+      <p><script>alert("<?= (isset($this->error) ? $this->error : "") ?> ")
+
+      </script></p>
     </fieldset>
 
   </form>
+
+
 
 
 
