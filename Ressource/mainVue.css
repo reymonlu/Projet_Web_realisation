@@ -1,27 +1,190 @@
 body{
-  width: 80%;
+  width: 90%;
   margin: auto;
 }
 
-#ulMenuNav
-{
+
+/* ------------ entete General -------------------*/
+
+
+.enteteLogo{
+  display: flex;
+}
+
+
+.enteteLogo a img{
+  width: 250px;
+}
+
+.enteteLogo h1{
+  margin-top: 100px;
+  margin-left: 20px;
+  font-size: 45px;
+  color: #17a589;             /*vert principal*/
+  font-style: oblique;
+  font-family: "Bradley Hand";
+
+}
+
+
+
+/* ------------ banniereRecherche -------------------*/
+
+
+.recherche{
+  background-color:  #d2b4de ;    /*violet principal*/
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  width: 100%;
+}
+
+/* body form{
+  margin :auto;
+} */
+
+.recherche div{
+  margin: 20px;
+}
+
+ #formRecherche div{
+  margin-top: 10px;
+}
+
+ #formRecherche h2{
+  font-size: 25px;
+  color:#696969;
+  font-family: sans-serif;
+}
+
+.recherche select{
+  height: 60px;
+  font-size: 20px;
+}
+
+.recherche input{
+  font-size: 20px;
+  height: 60px;
+}
+
+
+.recherche div:last-child{
+  margin-left: 50px;
+}
+
+
+
+
+/* ------------ zonUtilisateurOff -------------------*/
+
+#zoneConnexion{
+  display: flex;
+  justify-content: space-between;
+}
+
+#conexionInscription{
+  display: flex;
+  justify-content: center;
+}
+
+.connexion{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.connexion input{
+  margin-bottom: 10px;
+}
+
+.boutonsLogin{
+  width: 150px;
+  height: 50px;
+  border: 1px grey outset;
+  background-color: #d2b4de ;
+  border-radius: 30px;
+
+  font-weight: bold;
+  font-family:"Bradley Hand", sans-serif;
+  color: #696969;                      /*gris principal*/
+  font-size: 15px;
+  text-align: center;
+}
+
+.inscription{
+  align-self: center;
+}
+
+a{
+  text-decoration: none;
+}
+
+
+/* ------------ zonUtilisateurOn -------------------*/
+
+
+#zoneDeconnexion{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+
+#messageBienvenue{
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 10px;
+  font-family: "Optima", sans-serif;
+  font-weight: bold;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#messageBienvenue p{
+    margin: 0px 5px 0px 5px;
+}
+
+#messageBienvenue a{
+    margin: 5px 0px 15px 0px;
+}
+
+
+
+
+/* ------------ ulMenuNav -------------------*/
+
+
+#ulMenuNav{
   display: flex;
   list-style-type: none;
   margin: auto;
-
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
 }
 #ulMenuNav li{
   border: 1px solid #626262;
   border-radius: 5px;
-
-  color:#626262
+  width: 25%;
 }
 #ulMenuNav a
 {
   padding: 10px;
   display: block;
-  background-color: orange;
- text-decoration: none;
+  background-color: #17a589;
+  text-decoration: none;
+  color: #C0C0C0;
+  font-weight: bold;
+  text-align: center;
+  font-size: 20px;
 }
 
 #ulMenuNav a:hover{
@@ -30,87 +193,28 @@ body{
 }
 
 
-.recherche{
-  background-color:  #d2b4de ;
-  display: flex;
+
+/* ------------ zoneAffichageTrajet -------------------*/
+
+#tableauResultatRecherche{
+  margin:auto;
   text-align: center;
-  justify-content: center;
-  align-items: center;
-  height: 200px;
-}
-body form{
-  margin :auto;
-}
-form div{
-  margin: 10px;
+  font-size: 20px;
+  width: 100%;
+  height: 300px;
+  margin-top: 50px;
 }
 
-form h2{
-  font-size: 15px;
-}
+#tableauResultatRecherche th{
+  font-size: 30px;
+  color: white;
+  background-color:#17a589;
+  height: 50px;
 
-.recherche select{
-  height: 30px;
-}
-
-.recherche input{
-  height: 30px;
-}
-
-form div:last-child{
-  margin-left: 50px;
-}
-
-#zoneConnexion{
-  display: flex;
-  justify-content: space-around;
-}
-#zoneConnexion img{
-  width: 25%;
-  height: 40%;
-}
-
-#zoneConnexion form div{
-  display: flex;
-  justify-content: space-between;
-}
-
-#zoneConnexion h1{
-  margin-top: 0px;
-  margin-bottom: 0px;
-  font-size: 40px;
-  color: #17a589;
-  font-style: oblique;
-  font-family: "Bradley Hand";
-
-}
-#zoneConnexion form{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
 
+#tableauResultatRecherche td{
+  border-bottom: 1px solid #696969;
 
-#zoneDeconnexion{
-  display: flex;
-  justify-content: space-around;
-}
-#zoneDeconnexion img{
-  width: 25%;
-  height: 40%;
-}
-
-#zoneDeconnexion form div{
-  display: flex;
-  justify-content: space-between;
-}
-
-#zoneDeconnexion h1{
-  margin-top: 0px;
-  margin-bottom: 0px;
-  font-size: 40px;
-  color: #17a589;
-  font-style: oblique;
-  font-family: "Bradley Hand";
 }

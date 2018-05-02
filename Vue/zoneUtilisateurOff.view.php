@@ -1,27 +1,47 @@
 <div id="zoneConnexion">
-  <div>
-    <a href="mainControler.controler.php"><img src="./../Ressource/logo.png" alt="Logo du site"></a>
-    <h1>Super Blablablablacar du turfu !!! </h1>
+  <div class="enteteLogo">
+    <a href="mainControler.controler.php"><img src="./../Ressource/logo.png" alt="Le logo du site"></a>
+    <h1>Stud' & Go ! </h1>
 
   </div>
 
 
-  <form action="mainControler.controler.php" method="post">
-    <div>
-      <label for="pseudo">pseudo : </label>
-      <input type="text" name="pseudo" id="pseudo" required>
 
+
+
+<form id="conexionInscription" action="mainControler.controler.php" method="post">
+
+  <div class="connexion">
+
+    <!-- <div> -->
+      <label for="pseudo"> </label>
+      <input type="text" name="pseudo" placeholder="pseudo" id="pseudo" required>
+
+    <!-- </div>
+
+    <div> -->
+
+      <label for="motDePasse"> </label>
+      <input type="password" name="motDePasse" placeholder="mot de passe" id="motDePasse" required>
+
+    <!-- </div>
+
+    <div> -->
+      <input class="boutonsLogin" id="connectezVous" type="submit" value="Connectez-vous">
+      <p><?= isset($this->error) ? $this->error : "" ?> </p>
+    <!-- </div> -->
+
+  </div>
+
+  <div class="inscription">
+
+
+    <a href="inscription.controler.php">
+      <div class="boutonsLogin">
+        <p id="inscrivezVous"> Inscrivez vous</p></div>
+      </a>
     </div>
 
-    <div>
-
-      <label for="motDePasse">Mot de passe : </label>
-      <input type="password" name="motDePasse" id="motDePasse" required>
-
-    </div>
-    <input type="submit" value="Connectez-vous !">
-    <p><?= isset($this->error) ? $this->error : "" ?> </p>
-  <a href="inscription.controler.php">Inscrivez vous</a>
   </form>
 
 </div>

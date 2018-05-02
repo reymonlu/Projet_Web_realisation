@@ -1,4 +1,4 @@
-<form action="mainControler.controler.php" method="POST">
+<form id="formRecherche" action="mainControler.controler.php" method="POST">
     <div class="recherche">
 
       <div>
