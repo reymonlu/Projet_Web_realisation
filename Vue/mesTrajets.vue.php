@@ -15,18 +15,40 @@
        ?>
        <h2>Mes Demandes</h2>
        <table>
+         <tr><th>Ville Départ</th> <th>Ville arrivée</th><th>Date départ</th><th>Description</th> <th>Statut</th></tr>
+
+         <?php
+          if(!empty($this->demandeUtilisateur[0])){
+         foreach($this->demandeUtilisateur as $key => $value){ ?>
+
+           <tr>
+                 <td><?= $value[0] ?></td>
+                 <td> <?= $value[1] ?></td>
+                 <td> <?=$value[2]   ?></td>
+                 <td> <?=$value[3] ?></td>
+                 <td> <?= $value[4] ?></td>
+                 <!-- SUPPRESSION POUR L ADMIN -->
+                 <td>
+                   <form action="demandeSuppression.controler.php" method="post">
+                     <input type="text"  hidden name="idUtilisateur" value="<?= $value[5] ?>">
+                     <input type="text"  hidden name="numTrajet" value="<?= $value[6] ?>">
+                     <input type="submit" value="Supprimer">
+                   </form>
+                 </td>
+                </tr>
 
 
 
 
-
+         <?php }}?>
        </table>
 
        <h2>Mes Trajets</h2>
 
        <table>
            <tr> <th>Trajet</th> <th>Ville Départ</th> <th>Ville arrivée</th> <th>Date départ</th><th>Description</th> <th>Places Diponibles</th></tr>
-         <?php foreach($this->trajetsConducteur as $key => $value){ ?>
+         <?php if(!empty($this->trajetsConducteur[0])){
+          foreach($this->trajetsConducteur as $key => $value){ ?>
            <tr>
                  <td><a href="#"> <?= $value[0] ?></a></td>
                  <td> <?= $value[1] ?></td>
@@ -43,7 +65,7 @@
                </td>
               </tr>
 
-         <?php }?>
+         <?php }}?>
 
 
        </table>

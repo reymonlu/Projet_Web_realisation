@@ -25,13 +25,12 @@ $demandeDAO = new demandeDAO();
 //////////////////////////////////////////////////////////////////
 //si on a une variable de session et un id de trajet
 
-if($idUtilisateur != null && ($idTrajet != null)){
+if($idUtilisateur != null && ($idTrajet != null && $idUtilisateur != $trajetDAO->getTrajetbyID($idTrajet)->getConducteur())){
   //On vérifie qu'il y a des places disponibles
   if($trajetDAO->getnbrePlaceDispo($idTrajet) > 0){
     //On regarde s'il n'y a pas déjà de demande au même nom
     $maDemande = $demandeDAO->getDemande($idUtilisateur,$idTrajet);
-
-    //Si on ne trouve Rien
+    //Si on ne trouve Rien ET que ce n'est pas le trajet de l'utilisateur
     if($maDemande == null){
       //On fait notre ajout de la demande
       $demandeDAO->addDemande($idUtilisateur,$idTrajet);

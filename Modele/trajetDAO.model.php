@@ -70,7 +70,7 @@ class trajetDAO{
     $mesInfos = $this->db->query($requete);
 
     $mesTrajets = $mesInfos->fetchAll(PDO::FETCH_CLASS,'Trajet');
-    return (empty($mesTrajets)) ? null : $mesTrajets;
+    return (empty($mesTrajets)) ? array() : $mesTrajets;
   }
 }
 

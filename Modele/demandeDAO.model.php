@@ -58,12 +58,11 @@ class demandeDAO{
   //Fonction qui renvoie toutes les demandes d'un utilisateurs
   function getDemandeByIdUtilisateur($idUtilisateur){
       //Préparation de la requete
-      $requete = "SELECT * FROM demande WHERE demandeur=$idUtilisateur AND statut!='valide'";
+      $requete = "SELECT * FROM demande WHERE demandeur=$idUtilisateur";
       //Lancement de la requete
       $mesInfos = $this->db->query($requete);
-
       $mesDemandes = $mesInfos->fetchAll(PDO::FETCH_CLASS,'Demande');
-      return (empty($mesDemandes)) ? null : $mesDemandes;
+      return (empty($mesDemandes)) ? array() : $mesDemandes;
   }
 }
 
