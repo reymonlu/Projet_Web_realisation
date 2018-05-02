@@ -44,15 +44,22 @@ class membreDAO{
   }
 
   function addMembre($nom,$prenom,$pseudo,$dateNaissance,$numeroTel,$motDePasse,$adresseMail,$avatar){
-
     //Préparation de la requete
-
     $requete = "INSERT INTO membre(nom,prenom,pseudo,dateNaissance,adresseMail,numeroTel,motDePasse,avatar)
     VALUES ('$nom','$prenom','$pseudo','$dateNaissance','$adresseMail','$numeroTel','$motDePasse','$avatar')";
 
-
     //et envoie
     $this->db->exec($requete);
+  }
+
+  function getAllMembres(){
+    $requete = "SELECT * FROM membre";
+
+    try {
+      $this->db->exec($requete);
+    } catch (PDOException $e) {
+      die("Erreur requête : "$e->getMessage());
+    }
 
   }
 
