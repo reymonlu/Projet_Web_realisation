@@ -1,4 +1,4 @@
-<?php
+ll<?php
 require_once('membre.model.php');
 
 class membreDAO{
@@ -46,13 +46,14 @@ class membreDAO{
   function addMembre($nom,$prenom,$pseudo,$dateNaissance,$numeroTel,$motDePasse,$adresseMail,$avatar){
 
     //Préparation de la requete
+
     $requete = "INSERT INTO membre(nom,prenom,pseudo,dateNaissance,adresseMail,numeroTel,motDePasse,avatar)
     VALUES ('$nom','$prenom','$pseudo','$dateNaissance','$adresseMail','$numeroTel','$motDePasse','$avatar')";
-    var_dump($requete);
+
 
     //et envoie
     $this->db->exec($requete);
-    var_dump($this->db->exec($requete));
+
   }
 
 

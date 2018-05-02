@@ -24,7 +24,14 @@
 
     //Si mon premier tableau est vide, c'est qu'il n'y a pas de recherche
     if(!(empty($this->mesTrajetsVue[0]))){
-      include '../Vue/zoneAffichageTrajet.vue.php';
+      //Si l'utilisateur est connecté et si c'est l'admin
+      if($this->sessionEncours == true && $this->idMembre == 1){
+        include '../Vue/zoneAffichageTrajetAdmin.vue.php';
+      }
+      else{
+        include '../Vue/zoneAffichageTrajet.vue.php';
+      }
+
     }
      ?>
   </body>

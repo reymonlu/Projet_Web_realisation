@@ -34,7 +34,8 @@ if(isset($_POST['pseudo']) && isset($_POST['motDePasse'])){
     $_SESSION['id'] = $monMembre->getID();
     $_SESSION['avatar'] = $monMembre->getAvatar();
     $view->pseudoMembre = $monMembre->getPseudo();
-    $view->pseudoMembre = $monMembre->getAvatar();
+    $view->avatarMembre = $monMembre->getAvatar();
+    $view->idMembre = $_SESSION['id'];
   }
   else{
     $view->error = "Mauvais identifiant/Mot de Passe";
@@ -46,6 +47,7 @@ if(isset($_POST['pseudo']) && isset($_POST['motDePasse'])){
 if(isset($_SESSION['id'])){
   $view->sessionEncours = true;
   $monMembre = $monDAO->getMembreById($_SESSION['id']);
+  $view->idMembre = $_SESSION['id'];
   $view->pseudoMembre = $monMembre->getPseudo();
   $view->avatarMembre = $monMembre->getAvatar();
 }
@@ -79,11 +81,15 @@ if(isset($_POST['villeDepart']) && isset($_POST['villeArrivee']) && isset($_POST
   //On créer un tableau qua la vue va pouvoir utilisée
   $i = 0;
   foreach ($mesTrajetsDispo as $key => $value) {
-    $mesTrajetsVue [$i][] = $villeDAO->getVillebyCode($value->getVilleDepart())->getNom();
-    $mesTrajetsVue [$i][] = $villeDAO->getVillebyCode($value->getVilleDepart())->getNom();
-    $mesTrajetsVue [$i][] = $monDAO->getMembreById($value->getConducteur())->getPseudo();
-    $mesTrajetsVue [$i][] = $value->getDescription();
-    $mesTrajetsVue [$i][] = $trajetDAO->getnbrePlaceDispo($value->getNumTrajet());
+    $mesTrajetsVue [$i][] = $villeDAO->getVillebyCode($value->getVilleDepart())->getNom(); //Ville départ
+    $mesTrajetsVue [$i][] = $villeDAO->getVillebyCode($value->getVilleArrivee())->getNom(); //Ville Arrivée
+    $mesTrajetsVue [$i][] = date_create($value->getDateDepart())->format('d-m-Y');          //Date Départ refactoré au bon format
+    $mesTrajetsVue [$i][] = $monDAO->getMembreById($value->getConducteur())->getPseudo();   //Pseudo conducteur
+    $mesTrajetsVue [$i][] = $value->getDescription();                                       //Description
+    $mesTrajetsVue [$i][] = $trajetDAO->getnbrePlaceDispo($value->getNumTrajet());          //Nbre de place disponible
+    $mesTrajetsVue [$i][] = $value->getEstimation();                                         //estimation de temps
+    $mesTrajetsVue [$i][] = $value->getPrix();                                              //Prix du trajet
+    $mesTrajetsVue [$i][] = $value->getNumTrajet();                                         //id du trajet
     $i++;
   }
 
@@ -95,6 +101,4 @@ if(isset($_POST['villeDepart']) && isset($_POST['villeArrivee']) && isset($_POST
 $view->mesTrajetsVue = $mesTrajetsVue;
 $view->villes = $mesVilles;
 $view->show('../Vue/mainVue.vue.php');
-
-
 ?>
