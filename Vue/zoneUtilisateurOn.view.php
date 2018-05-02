@@ -7,6 +7,7 @@
 
 
  <div>
+   <img src="<?php echo "../Ressource/avatar/$this->avatarMembre"?>" alt="Avatar du membre">
    <p>Heureux de vous voir <?=$this->pseudoMembre ?></p>
    <a href="deconnexion.controler.php">Déconnexion</a>
  </div>

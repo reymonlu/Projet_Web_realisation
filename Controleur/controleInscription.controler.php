@@ -59,6 +59,7 @@ require_once("../Modele/view.class.php");
     //On rechernotre nouveau membre
     $monMembre = $monDAO->getMembreByPseudo($pseudo);
     $_SESSION['id'] = $monMembre->getID();
+    $_SESSION['avatar'] = $monMembre->getAvatar();
     header('Location:../index.php');
   }
 

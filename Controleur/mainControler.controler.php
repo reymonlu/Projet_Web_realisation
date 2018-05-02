@@ -32,7 +32,9 @@ if(isset($_POST['pseudo']) && isset($_POST['motDePasse'])){
   if($monMembre != null && $monMembre->getMotDePasse() === $motDePasse){
     //On met à jour le SESSION ID
     $_SESSION['id'] = $monMembre->getID();
+    $_SESSION['avatar'] = $monMembre->getAvatar();
     $view->pseudoMembre = $monMembre->getPseudo();
+    $view->pseudoMembre = $monMembre->getAvatar();
   }
   else{
     $view->error = "Mauvais identifiant/Mot de Passe";
@@ -45,6 +47,7 @@ if(isset($_SESSION['id'])){
   $view->sessionEncours = true;
   $monMembre = $monDAO->getMembreById($_SESSION['id']);
   $view->pseudoMembre = $monMembre->getPseudo();
+  $view->avatarMembre = $monMembre->getAvatar();
 }
 //On récupère toutes les villes de notre base pour les données à la vue
 $mesVilles = $villeDAO->getAllville();

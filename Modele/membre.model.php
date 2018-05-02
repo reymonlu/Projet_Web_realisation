@@ -26,5 +26,9 @@ class Membre{
   public function getID(){
     return $this->id;
   }
+
+  public function getAvatar(){
+    return $this->avatar;
+  }
 }
  ?>
