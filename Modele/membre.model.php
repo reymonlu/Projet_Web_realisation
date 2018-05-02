@@ -30,5 +30,21 @@ class Membre{
   public function getAvatar(){
     return $this->avatar;
   }
+
+  public function getPrenom(){
+    return $this->prenom;
+  }
+
+  public function getNom(){
+    return $this->nom;
+  }
+
+  public function getEmail(){
+    return $this->adresseMail;
+  }
+
+  public function getTelephone(){
+    return $this->numeroTel;
+  }
 }
  ?>

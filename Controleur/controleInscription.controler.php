@@ -55,19 +55,13 @@ require_once("../Modele/view.class.php");
 
   //Sinon, on peut créer le membre et l'insérer dans la base
   else{
-    $monDAO->addMembre($nom,$prenom,$pseudo,$dateNaissance,$telephone,$motDePasse,$mail,$avatar);
-    //On rechernotre nouveau membre
+      $monDAO->addMembre($nom,$prenom,$pseudo,$dateNaissance,$telephone,$motDePasse,$mail,$avatar);
+    //On recherche notre nouveau membre
     $monMembre = $monDAO->getMembreByPseudo($pseudo);
     $_SESSION['id'] = $monMembre->getID();
     $_SESSION['avatar'] = $monMembre->getAvatar();
     header('Location:../index.php');
   }
-
-
-
-
-
-
 
 
   ////////////////////////////////////////////////////////////////////
