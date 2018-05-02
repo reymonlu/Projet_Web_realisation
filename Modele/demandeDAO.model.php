@@ -53,7 +53,6 @@ class demandeDAO{
     //Lancement de la requete
     $this->db->exec($requete);
   }
-
 }
 
  ?>

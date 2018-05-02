@@ -1,10 +1,14 @@
 <?php
+
 require_once('../Modele/view.class.php');
 require_once('../Modele/membreDAO.model.php');
+
 require_once('../Modele/villeDAO.model.php');
-require_once("../Modele/trajetDAO.model.php");
+
+require_once('../Modele/trajetDAO.model.php');
 //démarrage de la session
 session_start();
+
 //////////////////////////////////////////////////////////////////////////////
 ////////////////////////RECUPERATION DES DONNEES//////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
@@ -16,6 +20,7 @@ $view->pseudoMembre ="";
 //Error s'il y a eu des error de mdP ou de pseudo
 $view->error ="";
 //Error s'il a eu des erro dans la recherche
+
 $view->errorRecherche="";
 $monDAO = new membreDAO();  //ouverture de la bse pour les membres
 $villeDAO = new villeDAO(); //ouverture de la base pour les villes
@@ -81,7 +86,7 @@ if(isset($_POST['villeDepart']) && isset($_POST['villeArrivee']) && isset($_POST
   //On créer un tableau qua la vue va pouvoir utilisée
   $i = 0;
   foreach ($mesTrajetsDispo as $key => $value) {
-    $mesTrajetsVue [$i][] = $villeDAO->getVillebyCode($value->getVilleDepart())->getNom(); //Ville départ
+    $mesTrajetsVue [$i][] = $villeDAO->getVillebyCode($value->getVilleDepart())->getNom();  //Ville départ
     $mesTrajetsVue [$i][] = $villeDAO->getVillebyCode($value->getVilleArrivee())->getNom(); //Ville Arrivée
     $mesTrajetsVue [$i][] = date_create($value->getDateDepart())->format('d-m-Y');          //Date Départ refactoré au bon format
     $mesTrajetsVue [$i][] = $monDAO->getMembreById($value->getConducteur())->getPseudo();   //Pseudo conducteur
@@ -92,9 +97,6 @@ if(isset($_POST['villeDepart']) && isset($_POST['villeArrivee']) && isset($_POST
     $mesTrajetsVue [$i][] = $value->getNumTrajet();                                         //id du trajet
     $i++;
   }
-
-
-
 //AFFICHAGE DE LA VUE
 //On peut lancer la vue parametrée
 
