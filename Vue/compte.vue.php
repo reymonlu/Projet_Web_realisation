@@ -2,11 +2,19 @@
 <html lang="fr" dir="ltr">
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="../Ressource/inscription.css">
+  <link rel="stylesheet" href="../Ressource/compte.css">
   <title>Mon compte</title>
+
+
+
 </head>
   <body>
+
+
     <?php include('../Vue/zoneUtilisateurOn.view.php'); ?>
+
+
+
 
     <fieldset>
       <legend>Mon compte</legend>
