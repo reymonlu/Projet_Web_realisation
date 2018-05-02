@@ -53,6 +53,19 @@ class trajetDAO{
     $retour = $columns[0];
     return ($nbrePlaceMax - $retour);
   }
+
+  function addTrajet($description, $prix, $nbPlaces, $dateDep, $estimation, $conducteur, $villeDepart, $villeArrivee){
+    $requete="INSERT INTO TRAJET(conducteur,description,prix,nombrePassagerMax,estimation,dateDepart,villeDepart,villeArrivee)
+                VALUES($conducteur, '$description', $prix, $nbPlaces, $estimation, '$dateDep', $villeDepart, $villeArrivee)";
+
+    try {
+      $this->db->query($requete);
+    }
+
+    catch (PDOException $e) {
+      die("Erreur requête : ".$e->getMessage());
+    }
+  }
 }
 
 
