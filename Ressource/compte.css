@@ -1,0 +1,126 @@
+body{
+  width: 80%;
+  margin: auto;
+}
+
+
+fieldset{
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #d2b4de;
+  border-radius: 10px;
+}
+
+fieldset p:last-child{
+  font-size: 30px;
+  color :red;
+}
+
+legend{
+  font-size: 30px;
+  color: #d2b4de;
+}
+
+div{
+  display: flex;
+  justify-content:flex-start;
+  margin-bottom: 10px;
+
+}
+
+#valider{
+  width: 150px;
+}
+
+label,p{
+  color: gray;
+}
+
+input{
+  margin-right: 20px;
+}
+
+input[type="date"]{
+  width: 173px;
+}
+
+
+input[type="radio"]{
+  width: 100px;
+  height: 100px;
+  position: relative;
+  right: 5px;
+  bottom:4px;
+}
+
+
+
+/* ------------ zonUtilisateurOn -------------------*/
+
+.boutonsLogin{
+  width: 150px;
+  height: 50px;
+  border: 1px grey outset;
+  background-color: #d2b4de ;
+  border-radius: 30px;
+
+  font-weight: bold;
+  font-family:"Bradley Hand", sans-serif;
+  color: #696969;                      /*gris principal*/
+  font-size: 15px;
+  text-align: center;
+}
+
+a{
+  text-decoration: none;
+}
+
+.enteteLogo{
+  display: flex;
+}
+
+
+.enteteLogo a img{
+  width: 250px;
+}
+
+.enteteLogo h1{
+  margin-top: 100px;
+  margin-left: 20px;
+  font-size: 45px;
+  color: #17a589;             /*vert principal*/
+  font-style: oblique;
+  font-family: "Bradley Hand";
+
+}
+
+
+#zoneDeconnexion{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+
+#messageBienvenue{
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 10px;
+  font-family: "Optima", sans-serif;
+  font-weight: bold;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#messageBienvenue p{
+    margin: 0px 5px 0px 5px;
+}
+
+#messageBienvenue a{
+    margin: 5px 0px 15px 0px;
+}
