@@ -40,8 +40,8 @@ if (!empty($_POST['champ_villeArr'])) {
   $villeArrivee = $_POST['champ_villeArr'];
 }
 
-//$conducteur=$_SESSION['id'];
-$conducteur=1;
+$conducteur=$_SESSION['id'];
+//$conducteur=1;
 
 $trajetDAO->addTrajet($description, $prix, $nbPlaces, $dateDep, $estimation, $conducteur, $villeDepart, $villeArrivee);
 

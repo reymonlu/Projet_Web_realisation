@@ -56,10 +56,13 @@ class membreDAO{
     $requete = "SELECT * FROM membre";
 
     try {
-      $this->db->exec($requete);
+      $result=$this->db->query($requete);
     } catch (PDOException $e) {
-      die("Erreur requête : "$e->getMessage());
+      die("Erreur requête : ".$e->getMessage());
     }
+
+    $mesVilles = $result->fetchAll(PDO::FETCH_CLASS,'Membre');
+    return (empty($mesVilles)) ? null : $mesVilles;
 
   }
 

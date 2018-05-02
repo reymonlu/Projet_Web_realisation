@@ -10,9 +10,9 @@ $villeDAO = new villeDAO();
 $membreDAO = new membreDAO();
 $trajetDAO = new trajetDAO();
 
-$lesVilles = $villeDAO.getAllville();
-$lesTrajets = $trajetDAO.getTrajetAll();
-$lesMembres = $membreDAO.getAllMembres();
+$lesVilles = $villeDAO->getAllville();
+$lesTrajets = $trajetDAO->getTrajetAll();
+$lesMembres = $membreDAO->getAllMembres();
 
 $view->villes=$lesVilles;
 $view->trajets=$lesTrajets;

@@ -39,6 +39,17 @@ class villeDAO{
     return (empty($mesVilles)) ? null : $mesVilles[0];
   }
 
+  function addVille($cp, $nom){
+    $requete="INSERT INTO ville(codePostal,nom) VALUES('$cp','$nom')";
+
+    try {
+      $this->db->query($requete);
+    } catch (PDOException $e) {
+      die("Erreur requète : ".$e->getMessage());
+    }
+
+  }
+
 
 }
 
