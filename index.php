@@ -5,7 +5,7 @@ header('Location:Controleur/mainControler.controler.php');
 // require_once("Modele/demandeDAO.model.php");
 //   $db = new demandeDAO();
 //
-//   var_dump($db->getAllDemandeByTrajet(2));
-//
+//   var_dump($db->getDemandeByIdUtilisateur(3));
+
 
 ?>

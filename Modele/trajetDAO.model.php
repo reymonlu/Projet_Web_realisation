@@ -58,13 +58,19 @@ class trajetDAO{
     $requete="INSERT INTO TRAJET(conducteur,description,prix,nombrePassagerMax,estimation,dateDepart,villeDepart,villeArrivee)
                 VALUES($conducteur, '$description', $prix, $nbPlaces, $estimation, '$dateDep', $villeDepart, $villeArrivee)";
 
-    try {
-      $this->db->query($requete);
-    }
 
-    catch (PDOException $e) {
-      die("Erreur requête : ".$e->getMessage());
-    }
+      $this->db->query($requete);
+  }
+  //fonction dui donne tout les trajets que l'utilisateur à créer
+  function getTrajetbyUtilisateur($idUtilisateur){
+    //On fait une requête qui donne tout les trajets que l'utilisateur à créer
+    $requete = "SELECT * FROM trajet WHERE conducteur=$idUtilisateur";
+
+    //Lancement de la requete
+    $mesInfos = $this->db->query($requete);
+
+    $mesTrajets = $mesInfos->fetchAll(PDO::FETCH_CLASS,'Trajet');
+    return (empty($mesTrajets)) ? null : $mesTrajets;
   }
 }
 
