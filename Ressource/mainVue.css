@@ -72,6 +72,8 @@ body{
 
 .recherche div:last-child{
   margin-left: 50px;
+  position: relative;
+  padding-top: 90px;
 }
 
 
@@ -123,6 +125,9 @@ a{
   text-decoration: none;
 }
 
+#inscrivezVous div{
+  margin-top: 40px;
+}
 
 /* ------------ zonUtilisateurOn -------------------*/
 
@@ -131,8 +136,6 @@ a{
   display: flex;
   justify-content: space-between;
 }
-
-
 
 
 #messageBienvenue{
@@ -217,4 +220,78 @@ a{
 #tableauResultatRecherche td{
   border-bottom: 1px solid #696969;
 
+}
+
+
+
+
+/* ----------------------- compte vue ------------------------*/
+
+#infosCompte{
+  display: flex;
+  flex-direction: column;
+}
+
+#infosCompte fieldset{
+  margin: auto;
+  justify-content: center;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #d2b4de;
+  border-radius: 10px;
+}
+
+
+#infosCompte legend{
+  font-size: 30px;
+  color: #d2b4de;
+}
+
+#infosCompte div{
+  display: flex;
+  justify-content:flex-start;
+  margin-bottom: 10px;
+
+}
+
+#valider{
+  width: 150px;
+}
+
+#infosCompte label,p{
+  color: gray;
+}
+
+#infosCompte input{
+  margin-right: 20px;
+}
+
+#infosCompte input[type="date"]{
+  width: 173px;
+}
+
+
+#infosCompte input[type="radio"]{
+  width: 100px;
+  height: 100px;
+  position: relative;
+  right: 5px;
+  bottom:4px;
+}
+
+.info p:first-child{
+
+  font-weight:bold;
+  color: black;
+  margin-right: 5px;
+}
+
+#RetourMain{
+  align-self: center;
+  margin-top:20px;
+}
+
+#RetourMain .boutonsLogin{
+  justify-content: center;
 }
