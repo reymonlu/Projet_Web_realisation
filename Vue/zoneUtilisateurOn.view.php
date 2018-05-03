@@ -13,7 +13,7 @@
      <br>Déconnexion
    </div></a>
    <?php
-   if ($this->idMembre==1) {
+   if ($_SESSION['id']==1) {
      // code...
      echo "<a href='../Controleur/adminBackOffice.controler.php'>Administration</a>";
    } ?>

@@ -15,8 +15,6 @@ class membreDAO{
     }
     $this->db->query('PRAGMA foreign_keys = ON');
 
-    $this->db->query("PRAGMA foreign_keys=ON");
-
   }
   //Fonciton qui retourne un membre en fonction de son pseudo
   function getMembreByPseudo($pseudo){

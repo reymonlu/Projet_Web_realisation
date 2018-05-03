@@ -210,13 +210,12 @@ table{
   border-collapse: collapse;
 }
 
-<<<<<<< HEAD
+
 table th{
   font-size: 30px;
-=======
-#tableauResultatRecherche th{
+}
+table th{
   font-size: 20px;
->>>>>>> 01cc256eace7746daa28bbcfda9ddd6baebf986d
   color: white;
   background-color:#17a589;
   height: 50px;
@@ -229,7 +228,7 @@ table td{
 
 }
 
-<<<<<<< HEAD
+
 .hidden{
   display: none;
   font-size: 12px;
@@ -246,7 +245,7 @@ table td{
 
 .hiddent th > td{
   border-bottom: 0px;
-=======
+}
 
 
 
