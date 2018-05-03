@@ -7,10 +7,9 @@
   </head>
   <body>
   
-   
-  <?php include('zoneUtilisateurOn.view.php'); ?>
-  <?php include('../Vue/menuNav.vue.php') ?>
-  
+  <?php  
+  	include(' ');
+  ?>
     <h1>Page d'administration</h1>
 
     <p>Actions disponibles :</p>
