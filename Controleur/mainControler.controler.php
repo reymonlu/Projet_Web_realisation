@@ -70,16 +70,20 @@ if(isset($_POST['villeDepart']) && isset($_POST['villeArrivee']) && isset($_POST
   $villeArrivee = $_POST['villeArrivee'];
   $dateDepart = $_POST['dateDepart'];
   //on boucle sur les trajets de notre base
-  foreach ($trajetDAO->getTrajetAll() as $key => $value) {
-    //Si les deux villes correspondent et qu'il y a toujours des places dispos
-    if($value->getVilleDepart() == $villeDepart && $value->getVilleArrivee() == $villeArrivee && $trajetDAO->getnbrePlaceDispo($value->getNumTrajet()) > 0){
-      //On réupère la date de départ
+  $toutLesTrajets = $trajetDAO->getTrajetAll();
+  if(!empty($toutLesTrajets)){
+
+    foreach ($trajetDAO->getTrajetAll() as $key => $value) {
+      //Si les deux villes correspondent et qu'il y a toujours des places dispos
+      if($value->getVilleDepart() == $villeDepart && $value->getVilleArrivee() == $villeArrivee && $trajetDAO->getnbrePlaceDispo($value->getNumTrajet()) > 0){
+        //On réupère la date de départ
         $dateTrajet = date_create($value->getDateDepart());
         $dateDemandee = date_create($dateDepart);
         //On ajoute à notre tableau de trajet si c'est un voyage à venir
         if($dateDemandee <= $dateTrajet){
           $mesTrajetsDispo [] = $value;
         }
+      }
     }
   }
 }

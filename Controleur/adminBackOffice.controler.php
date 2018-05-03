@@ -13,10 +13,16 @@ $trajetDAO = new trajetDAO();
 $lesVilles = $villeDAO->getAllville();
 $lesTrajets = $trajetDAO->getTrajetAll();
 $lesMembres = $membreDAO->getAllMembres();
+$mesMembresSansAdmin = array();;
+foreach ($lesMembres as $key => $value) {
+  if($value->getID() != 1){
+    $mesMembresSansAdmin[] = $value;
+  }
+}
 
 $view->villes=$lesVilles;
 $view->trajets=$lesTrajets;
-$view->membres=$lesMembres;
+$view->membres=$mesMembresSansAdmin;
 
 $view->show("../Vue/adminBackOffice.view.php");
 
