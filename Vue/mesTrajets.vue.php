@@ -9,9 +9,11 @@
 
 
       <?php
+
       include '../Vue/zoneUtilisateurOn.view.php';    //include de la zone connectée
-      include '../Vue/banniereRecherche.vue.php';     //include de la bannière de recherche
       include '../Vue/menuNav.vue.php';               //Include du menu
+      include '../Vue/banniereRecherche.vue.php';     //include de la bannière de recherche
+
        ?>
        <h2>Mes Demandes</h2>
        <table>

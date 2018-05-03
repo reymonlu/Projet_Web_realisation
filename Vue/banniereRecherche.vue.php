@@ -5,7 +5,7 @@
         <h2>Ville Départ</h2>
         <select name="villeDepart">
           <?php foreach ($this->villes as $key => $value) {  ?>
-              <option value="<?= $value->getCodePostal() ?>" selected><?= $value->getNom() ?></option>
+              <option value="<?= $value->getCodePostal() ?>" ><?= $value->getNom() ?></option>
           <?php } ?>
 
         </select>
@@ -17,7 +17,7 @@
 
         <select name="villeArrivee">
           <?php foreach ($this->villes as $key => $value) {  ?>
-              <option value="<?= $value->getCodePostal() ?>" selected><?= $value->getNom() ?></option>
+              <option value="<?= $value->getCodePostal() ?>" ><?= $value->getNom() ?></option>
           <?php } ?>
         </select>
 
