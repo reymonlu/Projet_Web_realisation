@@ -37,7 +37,7 @@
           </fieldset>
       </form>
 
-      <table border="solid black 1px">
+      <table>
         <tr>
           <th>Code Postal</th>
           <th>Nom</th>
@@ -52,28 +52,7 @@
             <td><?php echo $uneVille->getCodePostal(); ?></td>
             <td><?php echo $uneVille->getNom();?></td>
             <td><button type="button" name="button" onclick="deleteVille(<?php echo $uneVille->getCodePostal(); ?>)">supprimer</button></td>
-            <td><button type="button" name="button" onclick="updateVille(<?php echo $uneVille->getCodePostal(); ?>)">modifier</button></td>
           </tr>
-          <tr class="hidden" id="formUpdateVille<?php echo $uneVille->getCodePostal(); ?>">
-            <td colspan="4">
-              <form class="" action="index.html" method="post">
-                <fieldset>
-                  <legend>Modifier</legend>
-
-                  <label for="UPchamp_cp">Code Postal : </label>
-                  <input type="text" name="UPchamp_cp" id="UPchamp_cp" value="<?php echo $uneVille->getCodePostal(); ?>">
-
-                  <label for="UPchamp_nom">Nom : </label>
-                  <input type="text" name="UPchamp_nom" id="UPchamp_nom" value="<?php echo $uneVille->getNom(); ?>">
-
-                  <input type="reset" value="Annuler">
-                  <input type="submit" name="" value="Valider">
-
-                </fieldset>
-              </form>
-            </td>
-          </tr>
-
         <?php
           }
         ?>
@@ -122,15 +101,11 @@
     }
 
     function deleteVille(idVille){
-      window.location.replace("../Controleur/actionsVille.controler.php?villeID="+idVille);
-    }
-
-    function updateVille(idVille){
-      document.getElementById('formUpdateVille'+idVille).style.display="block";
+      window.location.replace("../Controleur/deleteVille.controler.php?cp="+idVille);
     }
 
     function deleteMembre(idMembre){
-
+      window.location.replace("../Controleur/deleteMembre.controler.php?membreID="+idMembre);
     }
   </script>
 

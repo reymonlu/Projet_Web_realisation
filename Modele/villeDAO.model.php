@@ -13,6 +13,9 @@ class villeDAO{
     catch(Exception $e){
       die('Erreur : '. $e->getMessage());
     }
+
+    $this->db->query("PRAGMA foreign_keys=ON");
+
   }
 
   function getAllville(){
@@ -48,6 +51,16 @@ class villeDAO{
       die("Erreur requète : ".$e->getMessage());
     }
 
+  }
+
+  function deleteVille($cp){
+    $requete="DELETE FROM ville WHERE codePostal='$cp'";
+
+    try {
+      $this->db->query($requete);
+    } catch (PDOException $e) {
+      die("Erreur requète : ".$e->getMessage());
+    }
   }
 
 

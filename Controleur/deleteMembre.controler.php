@@ -3,11 +3,11 @@ session_start();
 
 if(isset($_SESSION['id'])){
   // code...
-  require_once("../Modele/villeDAO.model.php");
+  require_once("../Modele/membreDAO.model.php");
 
-  $villeDAO = new villeDAO();
-  if (isset($_GET['cp'])) {
-    $villeDAO->deleteVille($_GET['cp']);
+  $membreDAO = new membreDAO();
+  if (isset($_GET['membreID'])) {
+    $membreDAO->deleteMembre($_GET['membreID']);
   }
 
   header('Location:../Controleur/adminBackOffice.controler.php');
