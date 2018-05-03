@@ -1,4 +1,4 @@
-<table>
+<table id="tableauResultatRecherche">
   <tr> <th>Ville Départ</th> <th>Ville arrivée</th> <th>Date départ</th> <th>Conducteur</th> <th>Description</th> <th>Places Diponibles</th><th>Estimation temps(heures)</th> <th>Prix fixé(€)</th> <th>Inscription</th>  </tr>
   <?php
     foreach ($this->mesTrajetsVue as $key => $value) {?>

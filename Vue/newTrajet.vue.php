@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Nouveau trajet</title>
-    <link rel="stylesheet" href="../Ressource/newTrajet.css">
-  </head>
-  <body>
+<head>
+  <meta charset="utf-8">
+  <title>Nouveau trajet</title>
+  <link rel="stylesheet" href="../Ressource/mainVue.css">
+</head>
+<body>
+  <?php include('zoneUtilisateurOn.view.php'); ?>
+  <?php include('../Vue/menuNav.vue.php') ?>
+
+  <div id="newTrajetStyle">
+
+
 
     <form name="formNewTrajet" class="formNewTrajet" action="../Controleur/newTrajet_form.controler.php" method="post" onsubmit="return valider()">
       <fieldset>
@@ -14,9 +20,9 @@
         <label for="champ_villeDep">Ville de départ : </label>
         <select name="champ_villeDep" id="champ_villeDep">
           <?php
-            foreach ($this->villes as $uneVille) {
-              echo "<option value=".$uneVille->getCodePostal().">".$uneVille->getNom()."</option>";
-            }
+          foreach ($this->villes as $uneVille) {
+            echo "<option value=".$uneVille->getCodePostal().">".$uneVille->getNom()."</option>";
+          }
           ?>
         </select>
 
@@ -25,9 +31,9 @@
         <label for="champ_villeArr">Ville d'arrivée : </label>
         <select name="champ_villeArr" id="champ_villeArr">
           <?php
-            foreach ($this->villes as $uneVille) {
-              echo "<option value=".$uneVille->getCodePostal().">".$uneVille->getNom()."</option>";
-            }
+          foreach ($this->villes as $uneVille) {
+            echo "<option value=".$uneVille->getCodePostal().">".$uneVille->getNom()."</option>";
+          }
           ?>
         </select>
 
@@ -36,6 +42,7 @@
       <fieldset>
         <legend>Départ</legend>
         <label for="champ_dateDep">Date de départ : </label>
+
         <input type="date" name="champ_dateDep" id="champ_dateDep" required>
         <p class="error" id="dateDep_error"></p>
 
@@ -68,46 +75,54 @@
         <p class="error" id="desc_error"></p>
       </fieldset>
 
-      <input type="reset" value="Annuler">
-      <input type="submit" value="Valider">
+
+      <div>
+        <input class="boutonsLogin" type="reset" value="Annuler">
+        <input class="boutonsLogin" type="submit" value="Valider">
+      </div>
+
     </form>
-  </body>
 
-  <script type="text/javascript">
 
-    function valider(){
-      var toReturn=true;
+  </div>
 
-      var today = new Date();
-      var dateDep = new Date(document.formNewTrajet.champ_dateDep.value);
+</body>
 
-      if(dateDep.getTime() < today.getTime()){
-        toReturn=false;
-        document.getElementById('dateDep_error').innerText="La date de départ ne doit pas être antérieure à la date courante";
-      }
-      else {
-        document.getElementById('dateDep_error').innerText="";
-      }
+<script type="text/javascript">
 
-      if(document.formNewTrajet.champ_nbPlaces.value<= 0){
-        toReturn=false;
-        document.getElementById('places_error').innerText="Le nombre de place doit être supérieur à 0";
-      }
-      else {
-        document.getElementById('places_error').innerText="";
-      }
+function valider(){
+  var toReturn=true;
 
-      if(isNaN(document.formNewTrajet.champ_prix.value)){
-        toReturn=false;
-        document.getElementById('prix_error').innerText="Le prix doit être un nombre sous la forme 0.0";
-      }
-      else {
-          document.getElementById('prix_error').innerText="";
-      }
+  var today = new Date();
+  var dateDep = new Date(document.formNewTrajet.champ_dateDep.value);
 
-      return toReturn;
-    }
-  </script>
+  if(dateDep.getTime() < today.getTime()){
+    toReturn=false;
+    document.getElementById('dateDep_error').innerText="La date de départ ne doit pas être antérieure à la date courante";
+  }
+  else {
+    document.getElementById('dateDep_error').innerText="";
+  }
+
+  if(document.formNewTrajet.champ_nbPlaces.value<= 0){
+    toReturn=false;
+    document.getElementById('places_error').innerText="Le nombre de place doit être supérieur à 0";
+  }
+  else {
+    document.getElementById('places_error').innerText="";
+  }
+
+  if(isNaN(document.formNewTrajet.champ_prix.value)){
+    toReturn=false;
+    document.getElementById('prix_error').innerText="Le prix doit être un nombre sous la forme 0.0";
+  }
+  else {
+    document.getElementById('prix_error').innerText="";
+  }
+
+  return toReturn;
+}
+</script>
 
 
 </html>

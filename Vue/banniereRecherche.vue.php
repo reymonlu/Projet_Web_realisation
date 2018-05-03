@@ -1,4 +1,4 @@
-<form action="mainControler.controler.php" method="POST">
+<form id="formRecherche" action="mainControler.controler.php" method="POST">
     <div class="recherche">
 
       <div>
@@ -29,8 +29,7 @@
       </div>
 
       <div>
-        <br><br>
-        <input type="submit" value="Envoyer">
+        <input type="submit" value="Rechercher">
         <p><?= (isset($this->errorRecherche)) ? $this->errorRecherche : "" ?> </p>
       </div>
 
