@@ -28,6 +28,7 @@
     $view->villes = $lesVilles;
     $view->pseudoMembre=$membre->getPseudo();
     $view->avatarMembre=$membre->getAvatar();
+    $view->idMembre = $_SESSION['id'];
     //$view->membre = $membre;
     $view->show('../Vue/newTrajet.vue.php');
   }
