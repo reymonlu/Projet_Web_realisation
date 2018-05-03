@@ -42,6 +42,7 @@
       <fieldset>
         <legend>Départ</legend>
         <label for="champ_dateDep">Date de départ : </label>
+
         <input type="date" name="champ_dateDep" id="champ_dateDep" required>
         <p class="error" id="dateDep_error"></p>
 
