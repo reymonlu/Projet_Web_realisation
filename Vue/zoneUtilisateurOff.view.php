@@ -36,9 +36,9 @@
   <div class="inscription">
 
 
-    <a href="inscription.controler.php">
+    <a id="inscrivezVous" href="inscription.controler.php">
       <div class="boutonsLogin">
-        <p id="inscrivezVous"> Inscrivez vous</p></div>
+        <p> Inscrivez vous</p></div>
       </a>
     </div>
 

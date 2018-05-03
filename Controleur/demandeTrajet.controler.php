@@ -37,9 +37,6 @@ if($idUtilisateur != null && ($idTrajet != null && $idUtilisateur != $trajetDAO-
       //Et on redirige
       header('Location:../index.php');
     }
-    else{
-       echo'test';
-    }
   }
 }
 

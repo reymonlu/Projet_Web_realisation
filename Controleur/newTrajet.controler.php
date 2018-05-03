@@ -4,7 +4,7 @@
 
   if (!isset($_SESSION['id'])) {
     // code...
-
+    header('Location:../index.php');
   }
 
   else {
@@ -20,12 +20,15 @@
     $membreDAO = new membreDAO();
     $trajetDAO = new trajetDAO();
 
-    //$membre = $membreDAO->getMembreById($_SESSION['id']);
+    $membre = $membreDAO->getMembreById($_SESSION['id']);
     $lesVilles = $villeDAO->getAllville();
 
 
     //Paramétrage et affichage de la vue
     $view->villes = $lesVilles;
+    $view->pseudoMembre=$membre->getPseudo();
+    $view->avatarMembre=$membre->getAvatar();
+    $view->idMembre = $_SESSION['id'];
     //$view->membre = $membre;
     $view->show('../Vue/newTrajet.vue.php');
   }

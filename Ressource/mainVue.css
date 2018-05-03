@@ -43,18 +43,18 @@ body{
 }
 
 /* body form{
-  margin :auto;
+margin :auto;
 } */
 
 .recherche div{
   margin: 20px;
 }
 
- #formRecherche div{
+#formRecherche div{
   margin-top: 10px;
 }
 
- #formRecherche h2{
+#formRecherche h2{
   font-size: 25px;
   color:#696969;
   font-family: sans-serif;
@@ -73,6 +73,8 @@ body{
 
 .recherche div:last-child{
   margin-left: 50px;
+  position: relative;
+  padding-top: 90px;
 }
 
 
@@ -124,6 +126,9 @@ a{
   text-decoration: none;
 }
 
+#inscrivezVous div{
+  margin-top: 40px;
+}
 
 /* ------------ zonUtilisateurOn -------------------*/
 
@@ -132,8 +137,6 @@ a{
   display: flex;
   justify-content: space-between;
 }
-
-
 
 
 #messageBienvenue{
@@ -150,11 +153,11 @@ a{
 }
 
 #messageBienvenue p{
-    margin: 0px 5px 0px 5px;
+  margin: 0px 5px 0px 5px;
 }
 
 #messageBienvenue a{
-    margin: 5px 0px 15px 0px;
+  margin: 5px 0px 15px 0px;
 }
 
 
@@ -200,15 +203,20 @@ a{
 table{
   margin:auto;
   text-align: center;
-  font-size: 20px;
+  font-size: 17px;
   width: 100%;
   height: 300px;
   margin-top: 50px;
   border-collapse: collapse;
 }
 
+<<<<<<< HEAD
 table th{
   font-size: 30px;
+=======
+#tableauResultatRecherche th{
+  font-size: 20px;
+>>>>>>> 01cc256eace7746daa28bbcfda9ddd6baebf986d
   color: white;
   background-color:#17a589;
   height: 50px;
@@ -221,6 +229,7 @@ table td{
 
 }
 
+<<<<<<< HEAD
 .hidden{
   display: none;
   font-size: 12px;
@@ -237,4 +246,130 @@ table td{
 
 .hiddent th > td{
   border-bottom: 0px;
+=======
+
+
+
+/* ----------------------- compte vue ------------------------*/
+
+#infosCompte{
+  display: flex;
+  flex-direction: column;
+}
+
+#infosCompte fieldset{
+  margin: auto;
+  justify-content: center;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #d2b4de;
+  border-radius: 10px;
+}
+
+
+#infosCompte legend{
+  font-size: 30px;
+  color: #d2b4de;
+}
+
+#infosCompte div{
+  display: flex;
+  justify-content:flex-start;
+  margin-bottom: 10px;
+
+}
+
+#valider{
+  width: 150px;
+}
+
+#infosCompte label,p{
+  color: gray;
+}
+
+#infosCompte input{
+  margin-right: 20px;
+}
+
+#infosCompte input[type="date"]{
+  width: 173px;
+}
+
+
+#infosCompte input[type="radio"]{
+  width: 100px;
+  height: 100px;
+  position: relative;
+  right: 5px;
+  bottom:4px;
+}
+
+.info p:first-child{
+
+  font-weight:bold;
+  color: black;
+  margin-right: 5px;
+}
+
+#RetourMain{
+  align-self: center;
+  margin-top:20px;
+}
+
+#RetourMain .boutonsLogin{
+  justify-content: center;
+}
+
+/* ----------------------- New Trajet ------------------------*/
+
+
+#newTrajetStyle{
+  display: flex;
+  flex-direction: column;
+  margin-top:20px;
+}
+
+#newTrajetStyle fieldset{
+  margin: auto;
+  justify-content: center;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #d2b4de;
+  border-radius: 10px;
+}
+
+
+#newTrajetStyle legend{
+  font-size: 30px;
+  color: #d2b4de;
+
+}
+
+#newTrajetStyle div{
+  display: flex;
+  justify-content:center;
+  margin-top: 10px;
+
+}
+
+
+#newTrajetStyle label{
+  color: gray;
+}
+
+
+
+#newTrajetStyle input[type="date"]{
+  width: 173px;
+}
+
+
+
+#newTrajetStyle .boutonsLogin{
+  margin: auto;
+  justify-content: center;
+
+>>>>>>> 01cc256eace7746daa28bbcfda9ddd6baebf986d
 }

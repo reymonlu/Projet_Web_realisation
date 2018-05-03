@@ -13,7 +13,13 @@ class villeDAO{
     catch(Exception $e){
       die('Erreur : '. $e->getMessage());
     }
+<<<<<<< HEAD
     $this->db->query('PRAGMA foreign_keys = ON');
+=======
+
+    $this->db->query("PRAGMA foreign_keys=ON");
+
+>>>>>>> 01cc256eace7746daa28bbcfda9ddd6baebf986d
   }
 
   function getAllville(){
@@ -38,6 +44,27 @@ class villeDAO{
 
     $mesVilles = $mesInfos->fetchAll(PDO::FETCH_CLASS,'Ville');
     return (empty($mesVilles)) ? null : $mesVilles[0];
+  }
+
+  function addVille($cp, $nom){
+    $requete="INSERT INTO ville(codePostal,nom) VALUES('$cp','$nom')";
+
+    try {
+      $this->db->query($requete);
+    } catch (PDOException $e) {
+      die("Erreur requète : ".$e->getMessage());
+    }
+
+  }
+
+  function deleteVille($cp){
+    $requete="DELETE FROM ville WHERE codePostal='$cp'";
+
+    try {
+      $this->db->query($requete);
+    } catch (PDOException $e) {
+      die("Erreur requète : ".$e->getMessage());
+    }
   }
 
 

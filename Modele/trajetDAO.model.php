@@ -13,7 +13,12 @@ class trajetDAO{
     catch(Exception $e){
       die('Erreur : '. $e->getMessage());
     }
+<<<<<<< HEAD
     $this->db->query('PRAGMA foreign_keys = ON');
+=======
+
+    $this->db->query("PRAGMA foreign_keys=ON");
+>>>>>>> 01cc256eace7746daa28bbcfda9ddd6baebf986d
   }
 
   //Fonciton qui retourne un membre en fonction de son pseudo
