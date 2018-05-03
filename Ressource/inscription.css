@@ -1,8 +1,14 @@
 body{
   width: 90%;
   margin: auto;
+  display: flex;
+  flex-direction: column;
+
 }
 
+#inscriptionStyle{
+  justify-content: center;
+}
 
 fieldset{
   width: 60%;
@@ -10,7 +16,7 @@ fieldset{
   flex-direction: column;
   border: 2px solid #d2b4de;
   border-radius: 10px;
-  
+
 }
 
 fieldset p:last-child{
@@ -83,4 +89,20 @@ input[type="radio"]{
   font-style: oblique;
   font-family: "Bradley Hand";
 
+}
+
+.boutonsLogin{
+  margin: auto;
+  justify-content: center;
+  width: 150px;
+  height: 50px;
+  border: 1px grey outset;
+  background-color: #d2b4de ;
+  border-radius: 30px;
+
+  font-weight: bold;
+  font-family:"Bradley Hand", sans-serif;
+  color: #696969;                      /*gris principal*/
+  font-size: 15px;
+  text-align: center;
 }
