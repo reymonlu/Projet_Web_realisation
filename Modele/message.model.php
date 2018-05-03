@@ -7,7 +7,33 @@
     private $destinataire; //int (clé étrangère)
 
 
-    function __construct();
+
+
+    function  __construct(){
+    }
+
+    function getNumeroMessage(){
+      return $this->$umeroMessage;
+    }
+
+    function getDescription(){
+      return $this->description;
+    }
+
+    function getSignalement(){
+      return $this->signalement;
+    }
+
+    function getDestinataire(){
+      return $this->destinataire;
+    }
+
+
+    function getExpediteur(){
+      return $this->expediteur;
+    }
+
+
   }
 
  ?>
