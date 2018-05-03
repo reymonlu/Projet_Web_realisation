@@ -21,19 +21,29 @@
       <form action="../Controleur/newVilleForm.controler.php" method="post">
           <fieldset>
             <legend>Ajouter une ville</legend>
+            <div id="mesChamps">
+              <div>
+                <label for="champ_cp">Code Postal : </label>
+                <input type="text" name="champ_cp" id="champ_cp" required/>
 
-            <label for="champ_cp">Code Postal : </label>
-            <input type="text" name="champ_cp" id="champ_cp" required/>
+              </div>
 
-            <br>
 
-            <label for="champ_nom">Nom : </label>
-            <input type="text" name="champ_nom" id="champ_nom" required/>
+              <div>
 
-            <br>
+                <label for="champ_nom">Nom : </label>
+                <input type="text" name="champ_nom" id="champ_nom" required/>
 
-            <input type="reset" value="Annuler">
-            <input type="submit" name="" value="Valider">
+              </div>
+
+              <div>
+                <input type="reset" value="Annuler">
+                <input type="submit" name="" value="Valider">
+
+              </div>
+            </div>
+
+
           </fieldset>
       </form>
 
@@ -41,21 +51,23 @@
         <tr>
           <th>Code Postal</th>
           <th>Nom</th>
-          <th></th>
-          <th></th>
+          <th>Suppression</th>
         </tr>
         <?php
-          foreach ($this->villes as $uneVille) {
-            // code...
-        ?>
-          <tr>
-            <td><?php echo $uneVille->getCodePostal(); ?></td>
-            <td><?php echo $uneVille->getNom();?></td>
-            <td><button type="button" name="button" onclick="deleteVille(<?php echo $uneVille->getCodePostal(); ?>)">supprimer</button></td>
-          </tr>
-        <?php
-          }
-        ?>
+          if(!empty($this->villes)){
+
+            foreach ($this->villes as $uneVille) {
+              // code...
+              ?>
+              <tr>
+                <td><?php echo $uneVille->getCodePostal(); ?></td>
+                <td><?php echo $uneVille->getNom();?></td>
+                <td><button type="button" name="button" onclick="deleteVille(<?php echo $uneVille->getCodePostal(); ?>)">supprimer</button></td>
+              </tr>
+              <?php
+            }}
+            ?>
+
       </table>
     </div>
 
@@ -67,20 +79,23 @@
           <th>Nom</th>
           <th>Prénom</th>
           <th>Pseudo</th>
+          <th>Suppression</th>
         </tr>
         <?php
-          foreach ($this->membres as $unMembre){
-        ?>
-            <tr>
-              <td><?php echo $unMembre->getID(); ?></td>
-              <td><?php echo $unMembre->getNom(); ?></td>
-              <td><?php echo $unMembre->getPrenom(); ?></td>
-              <td><?php echo $unMembre->getPseudo(); ?></td>
-              <td> <button type="button" name="button" onclick="deleteMembre(<?php echo $unMembre->getID(); ?>)">Supprimer</button> </td>
-            </tr>
-        <?php
-          }
-        ?>
+          if(!empty($this->membres)){
+            foreach ($this->membres as $unMembre){
+              ?>
+              <tr>
+                <td><?php echo $unMembre->getID(); ?></td>
+                <td><?php echo $unMembre->getNom(); ?></td>
+                <td><?php echo $unMembre->getPrenom(); ?></td>
+                <td><?php echo $unMembre->getPseudo(); ?></td>
+                <td> <button type="button" name="button" onclick="deleteMembre(<?php echo $unMembre->getID(); ?>)">Supprimer</button> </td>
+              </tr>
+              <?php
+            }}
+            ?>
+
       </table>
     </div>
 
