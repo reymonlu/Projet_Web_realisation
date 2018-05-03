@@ -4,11 +4,20 @@
     <h1>Stud' & Go ! </h1>
 
   </div>
+
+
  <div id="messageBienvenue">
    <img src="<?php echo "../Ressource/avatar/$this->avatarMembre"?>" alt="Avatar du membre">
    <p>Heureux de vous voir <?=$this->pseudoMembre ?></p>
    <a href="deconnexion.controler.php"><div class="boutonsLogin">
      <br>Déconnexion
-   </div>
+   </div></a>
+   <?php
+   if ($this->idMembre==1) {
+     // code...
+     echo "<a href='../Controleur/adminBackOffice.controler.php'>Administration</a>";
+   } ?>
+
+ </div>
 
 </div>
