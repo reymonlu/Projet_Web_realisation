@@ -27,6 +27,7 @@ if(isset($_SESSION['id'])){
   $viewCompte->nom=$membre->getNom();
   $viewCompte->adresseMail=$membre->getEmail();
   $viewCompte->telephone=$membre->getTelephone();
+  $viewCompte->idMembre=$membre->getID();
 
   $viewCompte->show("../Vue/compte.vue.php");
 

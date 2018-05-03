@@ -13,6 +13,9 @@ class trajetDAO{
     catch(Exception $e){
       die('Erreur : '. $e->getMessage());
     }
+
+    $this->db->query("PRAGMA foreign_keys=ON");
+
   }
 
   //Fonciton qui retourne un membre en fonction de son pseudo
@@ -58,13 +61,28 @@ class trajetDAO{
     $requete="INSERT INTO TRAJET(conducteur,description,prix,nombrePassagerMax,estimation,dateDepart,villeDepart,villeArrivee)
                 VALUES($conducteur, '$description', $prix, $nbPlaces, $estimation, '$dateDep', $villeDepart, $villeArrivee)";
 
-    try {
-      $this->db->query($requete);
-    }
 
-    catch (PDOException $e) {
-      die("Erreur requête : ".$e->getMessage());
-    }
+      $this->db->query($requete);
+  }
+  //fonction dui donne tout les trajets que l'utilisateur à créer
+  function getTrajetbyUtilisateur($idUtilisateur){
+    //On fait une requête qui donne tout les trajets que l'utilisateur à créer
+    $requete = "SELECT * FROM trajet WHERE conducteur=$idUtilisateur";
+
+    //Lancement de la requete
+    $mesInfos = $this->db->query($requete);
+
+    $mesTrajets = $mesInfos->fetchAll(PDO::FETCH_CLASS,'Trajet');
+    return (empty($mesTrajets)) ? array() : $mesTrajets;
+  }
+
+
+  function deleteTrajetById($numTrajet){
+    //On fait une requête qui donne tout les trajets que l'utilisateur à créer
+    $requete = "DELETE FROM trajet WHERE numeroTrajet=$numTrajet";
+
+    //Lancement de la requete
+    $mesInfos = $this->db->exec($requete);
   }
 }
 

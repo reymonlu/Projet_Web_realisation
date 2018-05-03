@@ -7,6 +7,7 @@
   </head>
   <body>
     <?php
+
     if($this->sessionEncours == false){
       //In inclue la banniere avec la demande de connexion ou d'inscription
       include '../Vue/zoneUtilisateurOff.view.php';
@@ -14,12 +15,13 @@
     else{
       include '../Vue/zoneUtilisateurOn.view.php';
     }
-    //On inclue notre banniere avec la zone de recherche
-    include '../Vue/banniereRecherche.vue.php';
     //et on affiche le menue naviguant s'il l'uilisateur est connecté
     if($this->sessionEncours == true){
       include '../Vue/menuNav.vue.php';
     }
+    //On inclue notre banniere avec la zone de recherche
+    include '../Vue/banniereRecherche.vue.php';
+
     //Si j'ai des trajets à afficher, je lance la vue des trajets
 
     //Si mon premier tableau est vide, c'est qu'il n'y a pas de recherche

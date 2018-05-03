@@ -13,6 +13,7 @@ class membreDAO{
     catch(Exception $e){
       die('Erreur : '. $e->getMessage());
     }
+    $this->db->query('PRAGMA foreign_keys = ON');
 
   }
   //Fonciton qui retourne un membre en fonction de son pseudo
@@ -44,16 +45,36 @@ class membreDAO{
   }
 
   function addMembre($nom,$prenom,$pseudo,$dateNaissance,$numeroTel,$motDePasse,$adresseMail,$avatar){
-
     //Préparation de la requete
-
     $requete = "INSERT INTO membre(nom,prenom,pseudo,dateNaissance,adresseMail,numeroTel,motDePasse,avatar)
     VALUES ('$nom','$prenom','$pseudo','$dateNaissance','$adresseMail','$numeroTel','$motDePasse','$avatar')";
 
-
     //et envoie
     $this->db->exec($requete);
+  }
 
+  function getAllMembres(){
+    $requete = "SELECT * FROM membre";
+
+    try {
+      $result=$this->db->query($requete);
+    } catch (PDOException $e) {
+      die("Erreur requête : ".$e->getMessage());
+    }
+
+    $mesVilles = $result->fetchAll(PDO::FETCH_CLASS,'Membre');
+    return (empty($mesVilles)) ? null : $mesVilles;
+
+  }
+
+  function deleteMembre($membreID){
+    $requete="DELETE FROM membre WHERE id='$membreID'";
+
+    try {
+      $this->db->query($requete);
+    } catch (PDOException $e) {
+      die("Erreur requète : ".$e->getMessage());
+    }
   }
 
 
