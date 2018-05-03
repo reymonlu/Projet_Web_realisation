@@ -15,7 +15,7 @@
        ?>
        <h2>Mes Demandes</h2>
        <table>
-         <tr><th>Ville Départ</th> <th>Ville arrivée</th><th>Date départ</th><th>Description</th> <th>Statut</th></tr>
+         <tr><th>Ville Départ</th> <th>Ville arrivée</th><th>Date départ</th><th>Description</th> <th>Statut</th> <th>Suppression</th> </tr>
 
          <?php
           if(!empty($this->demandeUtilisateur[0])){
@@ -29,49 +29,39 @@
                  <td> <?= $value[4] ?></td>
                  <!-- SUPPRESSION POUR L ADMIN -->
                  <td>
-                   <form action="demandeSuppression.controler.php" method="post">
+                   <form action="SuppressionDemande.controler.php" method="post">
                      <input type="text"  hidden name="idUtilisateur" value="<?= $value[5] ?>">
                      <input type="text"  hidden name="numTrajet" value="<?= $value[6] ?>">
                      <input type="submit" value="Supprimer">
                    </form>
                  </td>
-                </tr>
-
-
-
-
+              </tr>
          <?php }}?>
        </table>
+
+
 
        <h2>Mes Trajets</h2>
 
        <table>
-           <tr> <th>Trajet</th> <th>Ville Départ</th> <th>Ville arrivée</th> <th>Date départ</th><th>Description</th> <th>Places Diponibles</th></tr>
+           <tr> <th>Trajet</th> <th>Ville Départ</th> <th>Ville arrivée</th> <th>Date départ</th><th>Description</th> <th>Places Diponibles</th> <th>Suppression</th></tr>
          <?php if(!empty($this->trajetsConducteur[0])){
           foreach($this->trajetsConducteur as $key => $value){ ?>
            <tr>
-                 <td><a href="#"> <?= $value[0] ?></a></td>
+                 <td><a href="gestionDemande.controler.php?idTrajet=<?= $value[0] ?>"><?= $value[0] ?></a> </td>
                  <td> <?= $value[1] ?></td>
                  <td> <?=$value[2]   ?></td>
                  <td> <?=$value[3] ?></td>
                  <td> <?= $value[4] ?></td>
                  <td> <?= $value[5] ?></td>
-               <!-- SUPPRESSION POUR L ADMIN -->
-               <td>
-                 <form action="demandeSuppression.controler.php" method="post">
-                   <input type="text"  hidden name="numTrajet" value="<?= $value[6] ?>">
-                   <input type="submit" value="Supprimer">
-                 </form>
-               </td>
-              </tr>
-
-         <?php }}?>
-
-
+                 <!-- SUPPRESSION POUR L ADMIN -->
+                 <td>
+                   <form action="SuppressionTrajet.controler.php" method="post">
+                     <input type="text"  hidden name="numTrajet" value="<?= $value[6] ?>">
+                     <input type="submit" value="Supprimer">
+                   </form>
+                 </td>
+               <?php }} ?>
        </table>
-
-
-
-
   </body>
 </html>

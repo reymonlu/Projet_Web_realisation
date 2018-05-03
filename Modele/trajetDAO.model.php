@@ -13,6 +13,7 @@ class trajetDAO{
     catch(Exception $e){
       die('Erreur : '. $e->getMessage());
     }
+    $this->db->query('PRAGMA foreign_keys = ON');
   }
 
   //Fonciton qui retourne un membre en fonction de son pseudo
@@ -71,6 +72,15 @@ class trajetDAO{
 
     $mesTrajets = $mesInfos->fetchAll(PDO::FETCH_CLASS,'Trajet');
     return (empty($mesTrajets)) ? array() : $mesTrajets;
+  }
+
+
+  function deleteTrajetById($numTrajet){
+    //On fait une requête qui donne tout les trajets que l'utilisateur à créer
+    $requete = "DELETE FROM trajet WHERE numeroTrajet=$numTrajet";
+
+    //Lancement de la requete
+    $mesInfos = $this->db->exec($requete);
   }
 }
 

@@ -18,6 +18,10 @@ class demande {
     return $this->statut;
   }
 
+  function setDemandeur($nom){
+    $this->demandeur = $nom;
+  }
+
 
 
   }

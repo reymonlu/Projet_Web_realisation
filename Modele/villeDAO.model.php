@@ -13,6 +13,7 @@ class villeDAO{
     catch(Exception $e){
       die('Erreur : '. $e->getMessage());
     }
+    $this->db->query('PRAGMA foreign_keys = ON');
   }
 
   function getAllville(){

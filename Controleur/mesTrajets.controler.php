@@ -62,20 +62,16 @@ $vueDemandeUtilisateur = array(array()); //Tableau de stockage des demandes pour
 $j = 0;
 foreach ($demandeUtilisateur as $key => $value) {
   $vueDemandeUtilisateur [$j][] = $villeDAO->getVillebyCode($trajetDAO->getTrajetbyID($value->getNumTrajet())->getVilleDepart())->getNom();             //On affiche Ville départ
-  $vueDemandeUtilisateur [$j][] = $villeDAO->getVillebyCode($trajetDAO->getTrajetbyID($value->getNumTrajet())->getVilleArrivee())->getNom();           //Ville Arrivée
-  $vueDemandeUtilisateur [$j][] = date_create($trajetDAO->getTrajetbyID($value->getNumTrajet())->getDateDepart())->format('d-m-Y');                                                //Date Départ refactoré au bon format
-  $vueDemandeUtilisateur [$j][] = $trajetDAO->getTrajetbyID($value->getNumTrajet())->getDescription();                                                                             //DESCRITPION
+  $vueDemandeUtilisateur [$j][] = $villeDAO->getVillebyCode($trajetDAO->getTrajetbyID($value->getNumTrajet())->getVilleArrivee())->getNom();            //Ville Arrivée
+  $vueDemandeUtilisateur [$j][] = date_create($trajetDAO->getTrajetbyID($value->getNumTrajet())->getDateDepart())->format('d-m-Y');                     //Date Départ refactoré au bon format
+  $vueDemandeUtilisateur [$j][] = $trajetDAO->getTrajetbyID($value->getNumTrajet())->getDescription();                                                  //DESCRITPION
   $vueDemandeUtilisateur [$j][] = $value->getStatut();                                                                                                  //STATUT
   $vueDemandeUtilisateur [$j][] = $_SESSION['id'];                                                                                                      //SESSION ID
   $vueDemandeUtilisateur [$j][] = $value->getNumTrajet();                                                                                               //ET LE NUMERO DE TRAJET POUR FAIRE LA SUPPRESSION
   $j++;
 }
 
-
-
-
-
-
+$lesDemandes = $demandeDAO->getAllDemande();
 
 
 
@@ -98,5 +94,6 @@ foreach ($demandeUtilisateur as $key => $value) {
 //Affichage de la vue
 $view->demandeUtilisateur = $vueDemandeUtilisateur;
 $view->trajetsConducteur = $vueTrajetsConducteurs;
+$view->allDemandes = $lesDemandes;
 $view->show('../Vue/mesTrajets.vue.php');
  ?>

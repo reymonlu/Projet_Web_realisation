@@ -13,7 +13,7 @@
         <td> <?= $value[7] ?></td>
       <!-- SUPPRESSION POUR L ADMIN -->
       <td>
-        <form action="demandeSuppression.controler.php" method="post">
+        <form action="SuppressionTrajet.controler.php" method="post">
           <input type="text"  hidden name="numTrajet" value="<?= $value[8] ?>">
           <input type="submit" value="Supprimer">
         </form>
