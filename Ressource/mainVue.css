@@ -42,18 +42,18 @@ body{
 }
 
 /* body form{
-  margin :auto;
+margin :auto;
 } */
 
 .recherche div{
   margin: 20px;
 }
 
- #formRecherche div{
+#formRecherche div{
   margin-top: 10px;
 }
 
- #formRecherche h2{
+#formRecherche h2{
   font-size: 25px;
   color:#696969;
   font-family: sans-serif;
@@ -152,11 +152,11 @@ a{
 }
 
 #messageBienvenue p{
-    margin: 0px 5px 0px 5px;
+  margin: 0px 5px 0px 5px;
 }
 
 #messageBienvenue a{
-    margin: 5px 0px 15px 0px;
+  margin: 5px 0px 15px 0px;
 }
 
 
@@ -294,4 +294,56 @@ a{
 
 #RetourMain .boutonsLogin{
   justify-content: center;
+}
+
+/* ----------------------- New Trajet ------------------------*/
+
+
+#newTrajetStyle{
+  display: flex;
+  flex-direction: column;
+  margin-top:20px;
+}
+
+#newTrajetStyle fieldset{
+  margin: auto;
+  justify-content: center;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #d2b4de;
+  border-radius: 10px;
+}
+
+
+#newTrajetStyle legend{
+  font-size: 30px;
+  color: #d2b4de;
+
+}
+
+#newTrajetStyle div{
+  display: flex;
+  justify-content:center;
+  margin-top: 10px;
+
+}
+
+
+#newTrajetStyle label{
+  color: gray;
+}
+
+
+
+#newTrajetStyle input[type="date"]{
+  width: 173px;
+}
+
+
+
+#newTrajetStyle .boutonsLogin{
+  margin: auto;
+  justify-content: center;
+
 }
