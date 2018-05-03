@@ -38,9 +38,6 @@ if($idUtilisateur != null && ($idTrajet != null)){
       //Et on redirige
       header('Location:../index.php');
     }
-    else{
-       echo'test';
-    }
   }
 }
 

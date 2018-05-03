@@ -7,5 +7,4 @@ header('Location:Controleur/mainControler.controler.php');
 //
 //   var_dump($db->getAllDemandeByTrajet(2));
 //
-
 ?>
