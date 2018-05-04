@@ -16,7 +16,7 @@
     <div class="categorie">
 
       <!-- si l'erreur existe, cela veut dire qu'un message a été
-      entré avec un mauvais pseudo -->
+      entré avec un mauvais pseudo ou sans destinataire-->
       <?php
       if(isset($this->erreur)){
         if($this->erreur==1){
@@ -40,6 +40,9 @@
 
       <h2>Messages Reçus</h2>
       <?php
+      //si la liste messagesRecus est vide rien ne se passe, sinon on la parcours
+      //en même temps que la liste tableauExpediteurs pour afficher le pseudo de
+      //l'expediteur ainsi que le contenu du message
       if(!(empty($this->messagesRecus))){
         $i=0;
         foreach ($this->messagesRecus as $unMessageRecu){
@@ -52,8 +55,11 @@
     </div>
 
     <div class="categorie">
+
+
       <h2>Messages Envoyés</h2>
       <?php
+      //idem que pour messages recus
       if(!(empty($this->messagesEnvoyes))){
         $i=0;
         foreach ($this->messagesEnvoyes as $unMessageEnvoye){
@@ -95,38 +101,6 @@
     </div>
 
   </body>
-
-  <!-- <script type="text/javascript">
-
-  function envoyerMessage(){
-  var toReturn=true;
-
-  if((document.formNewMessage.champ_descriptionMessage.value)==""){
-  toReturn=false;
-  alert("Veuillez entrer un message.");
-  return toReturn;
-
-}
-else {
-
-
-}
-if((document.formNewMessage.champ_destinataire.value)==""){
-if(!isset(document.formNewMessage.champ_signalement.value)){
-alert("Veuillez entrer un pseudo.");
-toReturn=false;
-}
-
-}
-else {
-
-}
-
-
-return toReturn;
-
-}
-</script> -->
 
 
 </html>

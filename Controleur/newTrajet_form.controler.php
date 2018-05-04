@@ -3,25 +3,27 @@
 session_start();
 require_once("../Modele/trajetDAO.model.php");
 
-$trajetDAO = new trajetDAO();
+$trajetDAO = new trajetDAO();//Ouverture de la base pour les trajets
+
+
+// ** RECUPERATION DES CHAMPS DU FORMULAIRE **
 
 if (!empty($_POST['champ_descrip'])) {
-  // code...
+
   $description = $_POST['champ_descrip'];
 }
 
 if (!empty($_POST['champ_prix'])) {
-  // code...
+
   $prix = $_POST['champ_prix'];
 }
 
 if (!empty($_POST['champ_nbPlaces'])) {
-  // code...
+
   $nbPlaces = $_POST['champ_nbPlaces'];
 }
 
 if (!empty($_POST['champ_dateDep'])) {
-  // code...
   $dateDep = $_POST['champ_dateDep'];
 }
 
@@ -40,14 +42,10 @@ if (!empty($_POST['champ_villeArr'])) {
   $villeArrivee = $_POST['champ_villeArr'];
 }
 
+
 $conducteur=$_SESSION['id'];
-<<<<<<< HEAD
 
-=======
-//$conducteur=1;
->>>>>>> 01cc256eace7746daa28bbcfda9ddd6baebf986d
-
-$trajetDAO->addTrajet($description, $prix, $nbPlaces, $dateDep, $estimation, $conducteur, $villeDepart, $villeArrivee);
+$trajetDAO->addTrajet($description, $prix, $nbPlaces, $dateDep, $estimation, $conducteur, $villeDepart, $villeArrivee); //Ajout d'un trajet
 
 header('Location:../Controleur/mainControler.controler.php');
 ?>

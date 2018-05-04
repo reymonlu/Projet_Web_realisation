@@ -53,6 +53,7 @@ class membreDAO{
     $this->db->exec($requete);
   }
 
+  //Retourne une liste de tous les membres
   function getAllMembres(){
     $requete = "SELECT * FROM membre";
 
@@ -67,6 +68,7 @@ class membreDAO{
 
   }
 
+  //Supprime un membre
   function deleteMembre($membreID){
     $requete="DELETE FROM membre WHERE id='$membreID'";
 

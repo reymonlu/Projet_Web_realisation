@@ -1,9 +1,8 @@
 <?php
   session_start();
-  //**RECUPERATION DES DONNEES**
 
+//Accès impossible sans la variable session de l'admin
   if (!isset($_SESSION['id'])) {
-    // code...
     header('Location:../index.php');
   }
 
@@ -16,20 +15,19 @@
 
     $view = new View();
 
-    $villeDAO = new villeDAO();
-    $membreDAO = new membreDAO();
-    $trajetDAO = new trajetDAO();
+    $villeDAO = new villeDAO(); //Ouverture de la base pour les villes
+    $membreDAO = new membreDAO();//Ouverture de la base pour les membres
+    $trajetDAO = new trajetDAO();//Ouverture de la base pour les trajets
+
 
     $membre = $membreDAO->getMembreById($_SESSION['id']);
     $lesVilles = $villeDAO->getAllville();
-
 
     //Paramétrage et affichage de la vue
     $view->villes = $lesVilles;
     $view->pseudoMembre=$membre->getPseudo();
     $view->avatarMembre=$membre->getAvatar();
     $view->idMembre = $_SESSION['id'];
-    //$view->membre = $membre;
     $view->show('../Vue/newTrajet.vue.php');
   }
  ?>

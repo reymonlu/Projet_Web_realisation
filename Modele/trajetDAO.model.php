@@ -30,7 +30,7 @@ class trajetDAO{
     return (empty($mesTrajets)) ? null : $mesTrajets[0];
   }
 
-  //Fonciton qui retourne un membre en fonction de son pseudo
+  //Fonction qui retourne tout les trajet de la base
   function getTrajetAll(){
     //Préparation de la requete
     $requete = "SELECT * FROM trajet";
@@ -41,7 +41,7 @@ class trajetDAO{
      $mesTrajets = $mesInfos->fetchAll(PDO::FETCH_CLASS,'Trajet');
     return (empty($mesTrajets)) ? null : $mesTrajets;
   }
-
+  //Donne le nombre de place d'un trajet donné
   function getnbrePlaceDispo($numtrajet){
     //On récupère notre trajet
     $monTrajet = $this->getTrajetbyID($numtrajet);
@@ -57,6 +57,7 @@ class trajetDAO{
     return ($nbrePlaceMax - $retour);
   }
 
+  //Ajoute un à la base de donnée
   function addTrajet($description, $prix, $nbPlaces, $dateDep, $estimation, $conducteur, $villeDepart, $villeArrivee){
     $requete="INSERT INTO TRAJET(conducteur,description,prix,nombrePassagerMax,estimation,dateDepart,villeDepart,villeArrivee)
                 VALUES($conducteur, '$description', $prix, $nbPlaces, $estimation, '$dateDep', $villeDepart, $villeArrivee)";
@@ -64,6 +65,7 @@ class trajetDAO{
 
       $this->db->query($requete);
   }
+
   //fonction dui donne tout les trajets que l'utilisateur à créer
   function getTrajetbyUtilisateur($idUtilisateur){
     //On fait une requête qui donne tout les trajets que l'utilisateur à créer
@@ -76,7 +78,7 @@ class trajetDAO{
     return (empty($mesTrajets)) ? array() : $mesTrajets;
   }
 
-
+  //Supprime un trajet à partir de son id
   function deleteTrajetById($numTrajet){
     //On fait une requête qui donne tout les trajets que l'utilisateur à créer
     $requete = "DELETE FROM trajet WHERE numeroTrajet=$numTrajet";

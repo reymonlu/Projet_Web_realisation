@@ -85,12 +85,14 @@ class demandeDAO{
      return (empty($allDemande)) ? null : $allDemande;
   }
 
+  //Accepter une Demande
   function accepterDemande($conducteur, $trajet){
     $requete="UPDATE demande SET statut='valide' WHERE demandeur=$conducteur AND trajet=$trajet";
 
     $this->db->query($requete);
   }
 
+  //Refuser une demande
   function refuserDemande($conducteur, $trajet){
     $requete="UPDATE demande SET statut='refuse' WHERE demandeur=$conducteur AND trajet=$trajet";
     $this->db->query($requete);

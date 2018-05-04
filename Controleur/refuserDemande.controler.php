@@ -18,8 +18,6 @@
       //On récupère l'id de l'utilisateur
       $idUtilisateur = $monDAO->getMembreByPseudo($_GET['conduteur'])->getID();
       $demandeDAO = new demandeDAO();
-      var_dump($_GET['trajet']);
-      var_dump($idUtilisateur);
 
       $demandeDAO->refuserDemande($idUtilisateur,$_GET['trajet']);
       header('Location:mesTrajets.controler.php');

@@ -15,7 +15,7 @@
       <li> <button type="button" onclick="displayMembre()">Gérer les membres</button></li>
     </ul>
 
-    <div class="hidden" id="villes">
+    <div class="hidden" id="villes"><!--caché, afficher au click du boutton Gérer les villes-->
       <h2>Gestion des villes</h2>
 
       <form action="../Controleur/newVilleForm.controler.php" method="post">
@@ -55,9 +55,8 @@
         </tr>
         <?php
           if(!empty($this->villes)){
-
+            //Une ligne par ville
             foreach ($this->villes as $uneVille) {
-              // code...
               ?>
               <tr>
                 <td><?php echo $uneVille->getCodePostal(); ?></td>
@@ -71,7 +70,7 @@
       </table>
     </div>
 
-    <div class="hidden" id="membres">
+    <div class="hidden" id="membres"><!--caché, afficher au click du boutton Gérer les membres-->
       <h2>Gestion des membres</h2>
       <table>
         <tr>
@@ -100,25 +99,29 @@
     </div>
 
 
-
+    <a href="../index.php"><img id="image" src="../Ressource/logo.png" alt="Le logo de l'entreprise"></a>
   </body>
 
   <script type="text/javascript">
 
+    //Affiche ou cache la div de gestion des villes
     function displayVille() {
       var div = document.getElementById('villes');
 
       div.style.display="block";
     }
 
+    //Affiche ou cache la div de gestion des membres
     function displayMembre() {
       document.getElementById('membres').style.display="block";
     }
 
+    //redirige vers le controleur de suppression d'une ville idVille
     function deleteVille(idVille){
       window.location.replace("../Controleur/deleteVille.controler.php?cp="+idVille);
     }
 
+    //redirige vers le controleur de suppression d'un membre idMembre
     function deleteMembre(idMembre){
       window.location.replace("../Controleur/deleteMembre.controler.php?membreID="+idMembre);
     }

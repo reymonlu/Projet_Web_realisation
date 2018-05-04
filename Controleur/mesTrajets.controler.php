@@ -19,7 +19,7 @@ $demandeDAO = new demandeDAO();
 //Vérification de l'existence du sessionID et passage des paramètre à la vue
 if(isset($_SESSION['id'])){
   $view->avatarMembre = $membreDAO->getMembreById($_SESSION['id'])->getAvatar(); //on passe l'avatar à la vue
-  $view->pseudoMembre = $membreDAO->getMembreById($_SESSION['id'])->getPseudo(); //on passe l'avatar à la vue
+  $view->pseudoMembre = $membreDAO->getMembreById($_SESSION['id'])->getPseudo(); //on passe le pseudo à la vue
   $view->villes = $villeDAO->getAllville();                                      //On passe toutes les villes
 }
 else{
